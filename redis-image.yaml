@@ -2,7 +2,7 @@
     kind: Namespace
   metadata:
     name: web
-
+---
 apiVersion: v1
 kind: Pod
 metadata:
