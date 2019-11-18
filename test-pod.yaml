@@ -9,4 +9,4 @@ spec:
     resources:
       limits:
         cpu: 200m
-         memory: 1Gi
+        memory: 1Gi
