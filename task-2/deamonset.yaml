@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: Ubuntu-ds
+spec:
+  selector:
+    matchLabels: 
+      name: Ubuntu
+  template:
+    metadata:
+      labels: 
+        name: Ubuntu
+    spec:
+      containers:
+      - name: DaemonSet-task
+        image: ubuntu
