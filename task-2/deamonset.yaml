@@ -12,5 +12,5 @@ spec:
         name: ubuntu
     spec:
       containers:
-      - name: daemonSet-task
+      - name: daemonset-task
         image: ubuntu
