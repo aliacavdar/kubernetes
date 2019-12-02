@@ -1,11 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: init-demo
+  name: nginx-pod
 spec:
   containers:
-  - name: nginx-pod 
+  - name: nginx-pod
     image: nginx:1.14.0
+    ports:
+    - containerPort: 80
     volumeMounts:
     - name: data
       mountPath: /usr/share/nginx/html
