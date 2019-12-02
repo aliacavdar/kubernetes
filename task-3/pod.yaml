@@ -10,5 +10,5 @@ spec:
     - name: data
       mountPath: /usr/share/nginx/html
   volumes:
-  - name: workdir
+  - name: data
     emptyDir: {}
