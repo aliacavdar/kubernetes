@@ -6,11 +6,9 @@ spec:
   containers:
   - name: nginx-pod 
     image: nginx:1.14.0
-    ports:
-      - containerPort: 80
     volumeMounts:
     - name: data
       mountPath: /usr/share/nginx/html
-   volumes:
-   - name: workdir
-     emptyDir: {}
+  volumes:
+  - name: workdir
+    emptyDir: {}
