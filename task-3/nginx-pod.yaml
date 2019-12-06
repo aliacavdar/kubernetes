@@ -7,7 +7,7 @@ spec:
   - image: nginx:1.14.0
     name: nginx-pod
     volumeMounts:
-    - mountPath: /usr/share/nginx/html
-      name: data
+    - mountPath: /usr/share/nginx/html 
+    name: data
   volumes:
   - name: data
