@@ -1,0 +1,7 @@
+Persistent volumes by the name
+
+    kubectl get services --sort-by=.metadata.name
+
+Persistent volumes sorted by size
+
+    kubectl get pv --sort-by=.spec.capacity.storage
