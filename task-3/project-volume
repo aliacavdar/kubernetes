@@ -1,0 +1,35 @@
+what is Projected Volume?
+
+The projected volume is a volume that projects several existing volume sources 
+into the same directory. Currently, one can project configmaps, downward API,
+ and secrets. The resulting pod spec is also shorter when projecting to a single 
+ volume as opposed to multiple different locations. See all-in-one volume design 
+ document for more information.
+
+ apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-test
+spec:
+  containers:
+  - name: container-test
+    image: busybox
+    volumeMounts:
+    - name: all-in-one
+      mountPath: "/projected-volume"
+      readOnly: true
+  volumes:
+  - name: all-in-one
+    projected:
+      sources:
+      - secret:
+          name: mysecret
+          items:
+            - key: username
+              path: my-group/my-username
+      - secret:
+          name: mysecret2
+          items:
+            - key: password
+              path: my-group/my-password
+              mode: 511
